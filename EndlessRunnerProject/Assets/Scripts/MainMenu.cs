@@ -3,9 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class MainMenu : MonoBehaviour
 {
+    [SerializeField] TMP_Text highscoreText;
+    
+    void Start()
+    {
+        highscoreText.text = "Highscore: " + PlayerPrefs.GetInt("HighScore", 0).ToString();
+    }
+
     public void PlayGame()
     {
         SceneManager.LoadScene("EndlessRunner");
