@@ -11,6 +11,7 @@ public class MainMenu : MonoBehaviour
     
     void Start()
     {
+        PlayerPrefs.DeleteAll();
         highscoreText.text = "Highscore: " + PlayerPrefs.GetInt("HighScore", 0).ToString();
     }
 

@@ -11,9 +11,9 @@ public class ShopManager : MonoBehaviour
 
     public CharacterStats[] characters;
     public Button BuyButton;
-    public Text coinText;
+    public TMP_Text coinText;
     public int coins;
-    public Text characterName;
+    public TMP_Text characterName;
 
     // Start is called before the first frame update
     public void Start()
@@ -94,7 +94,7 @@ public class ShopManager : MonoBehaviour
     private void UpdateUI()
     {
         CharacterStats c = characters[currentCharacterIndex];
-        characterName.GetComponent<Text>().text = c.name;
+        characterName.GetComponent<TMP_Text>().text = c.name;
         if (c.isUnlocked)
         {
             BuyButton.gameObject.SetActive(false);
@@ -102,7 +102,7 @@ public class ShopManager : MonoBehaviour
         else
         {
             BuyButton.gameObject.SetActive(true);
-            BuyButton.GetComponentInChildren<Text>().text = "Buy-" + c.price;
+            BuyButton.GetComponentInChildren<TMP_Text>().text = "Buy-" + c.price;
             if(c.price < PlayerPrefs.GetInt("Coins"))
             {
                 BuyButton.interactable = true;
