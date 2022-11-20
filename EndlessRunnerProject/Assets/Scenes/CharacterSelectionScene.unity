@@ -1610,7 +1610,7 @@ MonoBehaviour:
     isUnlocked: 0
   - name: CheckBox
     index: 4
-    price: 750
+    price: 1000
     isUnlocked: 0
   BuyButton: {fileID: 1590780206}
   coinText: {fileID: 1098536271}

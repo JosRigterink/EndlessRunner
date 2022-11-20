@@ -102,7 +102,7 @@ public class ShopManager : MonoBehaviour
         else
         {
             BuyButton.gameObject.SetActive(true);
-            BuyButton.GetComponentInChildren<TMP_Text>().text = "Buy-" + c.price;
+            BuyButton.GetComponentInChildren<TMP_Text>().text = "Buy: " + c.price;
             if(c.price < PlayerPrefs.GetInt("Coins"))
             {
                 BuyButton.interactable = true;

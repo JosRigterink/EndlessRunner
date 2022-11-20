@@ -96,5 +96,19 @@ public class MissionChecker : MonoBehaviour
                 missionScreen3.transform.GetChild(3).GetComponent<RawImage>().color = Color.gray;
             }
         }
+        if (PlayerPrefs.GetInt("Mission7") == 1 & PlayerPrefs.GetInt("Mission8") == 1 & PlayerPrefs.GetInt("Mission9") == 1)
+        {
+            if (PlayerPrefs.GetInt("MissionRewards") == 0)
+            {
+                if (PlayerPrefs.GetInt("MissionRewards") == 1)
+                {
+                    return;
+                }
+                GameManager.inst.coins += 1000;
+                GameManager.inst.bubbleWater += 25;
+                PlayerPrefs.SetInt("MissionRewards", 1);
+            }
+
+        }
     }
 }
