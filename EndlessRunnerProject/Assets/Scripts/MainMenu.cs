@@ -8,11 +8,12 @@ using TMPro;
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] TMP_Text highscoreText;
+    [SerializeField] TMP_Text coinText;
     
     void Start()
     {
-        //PlayerPrefs.DeleteAll();
         highscoreText.text = "Highscore: " + PlayerPrefs.GetInt("HighScore", 0).ToString();
+        coinText.text = "Coins: " + PlayerPrefs.GetInt("Coins").ToString();
     }
 
     public void PlayGame()

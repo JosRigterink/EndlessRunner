@@ -30,7 +30,7 @@ public class MissionManager : MonoBehaviour
         PlayerPrefs.GetInt("Mission8", 0);
         PlayerPrefs.GetInt("Mission9", 0);
         InvokeRepeating("Mission", 2.0f, 2.0f);
-        PlayerPrefs.GetInt("MissionRewards", 0);
+        PlayerPrefs.GetInt("Rewards", 0);
     }
 
      public void Mission()
@@ -39,7 +39,7 @@ public class MissionManager : MonoBehaviour
         {
             if (missionComplete == false)
             {
-                if (PlayerPrefs.GetInt("Mission1") == 1 || missionComplete == true)
+                if (missionComplete == true)
                 {
                     return;
                 }
@@ -55,7 +55,7 @@ public class MissionManager : MonoBehaviour
         {
             if (missionComplete2 == false)
             {
-                if (PlayerPrefs.GetInt("Mission2") == 1 || missionComplete2 == true)
+                if (missionComplete2 == true)
                 {
                     return;
                 }
@@ -70,7 +70,7 @@ public class MissionManager : MonoBehaviour
         {
             if (missionComplete3 == false)
             {
-                if (PlayerPrefs.GetInt("Mission3") == 1 || missionComplete3 == true)
+                if (missionComplete3 == true)
                 {
                     return;
                 }
@@ -88,7 +88,7 @@ public class MissionManager : MonoBehaviour
             {
                 if (missionComplete4 == false)
                 {
-                    if (PlayerPrefs.GetInt("Mission4") == 1 || missionComplete4 == true)
+                    if (missionComplete4 == true)
                     {
                         return;
                     }
@@ -104,7 +104,7 @@ public class MissionManager : MonoBehaviour
             {
                 if (missionComplete5 == false)
                 {
-                    if (PlayerPrefs.GetInt("Mission5") == 1 || missionComplete5 == true)
+                    if (missionComplete5 == true)
                     {
                         return;
                     }
@@ -120,7 +120,7 @@ public class MissionManager : MonoBehaviour
             {
                 if (missionComplete6 == false)
                 {
-                    if (PlayerPrefs.GetInt("Mission6") == 1 || missionComplete6 == true)
+                    if (missionComplete6 == true)
                     {
                         return;
                     }
@@ -154,7 +154,7 @@ public class MissionManager : MonoBehaviour
             {
                 if (missionComplete8 == false)
                 {
-                    if (PlayerPrefs.GetInt("Mission8") == 1 || missionComplete8 == true)
+                    if (missionComplete8 == true)
                     {
                         return;
                     }
@@ -170,7 +170,7 @@ public class MissionManager : MonoBehaviour
             {
                 if (missionComplete9 == false)
                 {
-                    if (PlayerPrefs.GetInt("Mission9") == 1 || missionComplete9 == true)
+                    if (missionComplete9 == true)
                     {
                         return;
                     }
@@ -180,6 +180,24 @@ public class MissionManager : MonoBehaviour
                     time = 4;
                     missionComplete9 = true;
                 }
+            }
+
+            if (PlayerPrefs.GetInt("Mission7") == 1 & PlayerPrefs.GetInt("Mission8") == 1 & PlayerPrefs.GetInt("Mission9") == 1)
+            {
+                if (PlayerPrefs.GetInt("Rewards") == 0)
+                {
+                    if (PlayerPrefs.GetInt("Rewards") == 1)
+                    {
+                        return;
+                    }
+                    GameManager.inst.coins += 1000;
+                    GameManager.inst.bubbleWater += 25;
+                    PlayerPrefs.SetInt("Rewards", 1);
+                    missionsText.text = ("Mission Rewards Earned!");
+                    time = 4;
+                    Debug.Log("Rewards!");
+                }
+
             }
 
         }
