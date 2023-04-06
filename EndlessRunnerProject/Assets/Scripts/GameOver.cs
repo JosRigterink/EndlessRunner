@@ -43,6 +43,7 @@ public class GameOver : MonoBehaviour
             GameManager.inst.bubbleWater -= keepPlayPrice;
             PlayerPrefs.SetInt("BubbleWater", GameManager.inst.bubbleWater);
             gameOverScreen.SetActive(false);
+            GameManager.inst.scoreMultiplier = 1;
             GameManager.inst.player.GetComponent<PlayerMovement>().alive = true;
             GameManager.inst.player.GetComponent<CapsuleCollider>().isTrigger = true;
             GameManager.inst.player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY;
